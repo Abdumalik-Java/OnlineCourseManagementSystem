@@ -22,7 +22,7 @@ public class EnrollmentController {
         return new ResponseEntity<>(service.findAll(), HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping("/{id}")
     @PreAuthorize("hasAnyRole('SUPER_ADMIN','ADMIN','USER')")
     public HttpEntity<?> findById(@RequestParam Long id) {
         return new ResponseEntity<>(service.findById(id), HttpStatus.OK);

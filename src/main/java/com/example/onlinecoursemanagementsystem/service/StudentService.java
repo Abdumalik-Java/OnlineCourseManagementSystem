@@ -29,10 +29,6 @@ public class StudentService {
         return repo.findById(id).get();
     }
 
-    public Optional<Student> getStudentByEmail(String email) {
-        return repo.findByEmail(email);
-    }
-
     public Result create(StudentDto dto) {
         boolean b = repo.existsByEmail(dto.getEmail());
         if (b) {
